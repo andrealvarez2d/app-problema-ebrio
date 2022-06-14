@@ -41,7 +41,7 @@
 
         <h2>Ingrese número de intentos:</h2>
         <form action="app.php" method="post">
-            <input type="number" name="intentos" min="1" max="100">
+            <input type="number" name="intentos" min="5" max="100">
             <input type="submit" name="btn" value="Aceptar">
             <input type="reset" name="btn" value="Borrar">
         </form>
