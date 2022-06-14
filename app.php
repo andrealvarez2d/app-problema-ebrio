@@ -39,8 +39,8 @@
         $probabilidad = 0; //variable de la probabilidad
 
         for($i=1; $i<=$intentos; $i++){
-            $x = 0; //direccion norte-sur
-            $y = 0; //direccion este-oeste
+            $x = 0; //direccion este-oeste
+            $y = 0; //direccion norte-sur
             $cuadrasCaminadas = 0; //# de cuadras caminadas
 
             echo '<h2>Intento '.$i.'</h2>';
@@ -50,13 +50,13 @@
 
                 //evaluar la probabilidad de direccion
                 if($r >= 0 AND $r < 25){
-                    $y++;
+                    $y++; //norte
                 } elseif($r >= 25 AND $r < 50){
-                    $y--;
+                    $y--; //sur
                 }elseif($r >= 50 AND $r < 75){
-                    $x++;
+                    $x++; //este
                 }elseif($r >= 75 AND $r < 100){
-                    $x--;
+                    $x--; //oeste
                 }
 
                 //incrementar el # de cuadras caminadas
@@ -68,9 +68,8 @@
                 echo '<br>';
             }
 
-            //sumar la posicion final y comprobar si llego a dos calles
-                $sumaPosicion = $x + $y;
-                if($sumaPosicion == 2 OR $sumaPosicion == -2) {
+            //comprobar si llego a dos calles
+                if($y == 0 AND $x == 2 OR $y == 0 AND $x == -2 OR $y == 2 AND $x == 0 OR $y == -2 AND $x == 0) {
                 echo '<h3>llego a dos calles</h3>';
                 $numAciertos++;
             }
